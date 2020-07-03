@@ -13,12 +13,29 @@
 
 * MySQL
 
-### HOME PAGE
+#### HOME PAGE
 ![](Images/home.png)
 ![](Images/home1.png)
-![](Images/home2.png)
 ![](Images/home3.png)
+#### ABOUT
 ![](Images/home4.png)
+#### SIGN UP PAGE
+![](Images/signup.png)
+#### LOGIN PAGE 
+![](Images/login.png)
+#### CUSTOMER DASHBOARD
+![](Images/navigate.png) 
+#### TABLE BOOKING
+![](Images/table.png)
+#### ROOM BOOKING 
+![](Images/room.png)
+#### MY BOOKINGS DASHBOARD
+![](Images/mybookings.png)
+#### ADMIN DASHBOARD
+
+#### CONTACT US
+![](Images/home6.png)
+#### OUR HOTELS
 ![](Images/home5.png)
 
 
