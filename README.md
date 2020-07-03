@@ -14,8 +14,7 @@
 * MySQL
 
 ### HOME PAGE
-
-![HOME PAGE](D:\dbms\home.png)
+![](images/home.png)
 
 
 
