@@ -14,7 +14,7 @@
 * MySQL
 
 ### HOME PAGE
-![](images/home.png)
+![](D:dbms/home.png)
 
 
 
