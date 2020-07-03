@@ -1,16 +1,15 @@
 # hotel-management-system
-UI to book room and table in a hotel with customizations.
-Web application for hotel management.
+## UI to book room and table in a hotel with customizations.
+### Web application for hotel management.
 
-Link - hotel-management-system
+### Tech stack
 
-Tech stack
+* HTML+CSS
+* JavaScript
+* Bootstrap
+* PHP
 
-HTML+CSS
-JavaScript
-Bootstrap
-PHP
+### Database
 
-Database
+* MySQL
 
-MySQL
