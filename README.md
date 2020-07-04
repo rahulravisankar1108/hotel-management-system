@@ -32,7 +32,7 @@
 #### MY BOOKINGS DASHBOARD
 ![](Images/mybookings.png)
 #### ADMIN DASHBOARD
-
+![](Images/admin.png)
 #### CONTACT US
 ![](Images/home6.png)
 #### OUR HOTELS
