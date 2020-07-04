@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<title>Hilton Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="roomleft.js">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
+<body class="w3-light-grey">
+
+<!-- Navigation Bar -->
+<div class="w3-bar w3-white w3-large" >
+  <a href="#" class="w3-bar-item w3-button w3-red w3-mobile"><i class="fa fa-bed w3-margin-right"></i> <i class="fa fa-cutlery w3-margin-right"></i> Hilton Home</a>
+  <a href="#rooms" class="w3-bar-item w3-button w3-mobile"> Rooms</a>
+  <a href="#table" class="w3-bar-item w3-button w3-mobile"> Table</a>
+  <a href="#about" class="w3-bar-item w3-button w3-mobile"> About</a>
+  <a href="#address" class="w3-bar-item w3-button w3-mobile"> Location</a>
+  <a href="#ourhotels" class="w3-bar-item w3-button w3-mobile"> Our Branches</a>
+  <a href="#subscribe" class="w3-bar-item w3-button w3-mobile"> Subscribe</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-mobile"> Contact</a>
+  <a href="#Finduson" class="w3-bar-item w3-button w3-mobile"> Find Us On</a>
+  <a href="login.php" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Login</a>
+  <a href="adminlogin.php" class="w3-bar-item w3-button w3-right w3-light-grey w3-mobile">Admin</a>
+</div>
+<!-- Header -->
+<header class="w3-display-container w3-content" style="max-width:1500px;">
+  <img class="w3-image" src="sea.jpeg" alt="The Hilton" style="min-width:1000px" width="1500" height="800">
+  <div class="w3-display-left w3-padding w3-col l6 m8" style="opacity:0.8;">
+    <div class="w3-container w3-red">
+      <h2><i class="fa fa-bed w3-margin-right"></i> Hilton Rooms</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+      <form action="processroom.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class="fa fa-calendar-o"></i> Check In</label>
+            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckIn" required>
+          </div>
+          <div class="w3-half">
+            <label><i class="fa fa-calendar-o"></i> Check Out</label>
+            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckOut" required>
+          </div>
+        </div>
+        <div class="w3-row-padding" style="margin:8px -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class="fa fa-male"></i> Adults</label>
+            <input class="w3-input w3-border" type="number" value="1" name="Adults" min="1" max="15" required>
+          </div>
+          <div class="w3-half">
+            <label><i class="fa fa-child"></i> Children</label>
+          <input class="w3-input w3-border" type="number" value="0" name="Kids" min="0" max="15" required>
+          </div>
+        </div>
+        <button class="w3-button w3-dark-grey" name="searchroom" type="submit" onclick='alert("Sorry!!\nLogin is mandatory to view the rooms and availability")'><i class="fa fa-search w3-margin-right"></i> Search Availability</button>
+        
+      </form>
+    </div>
+  </div>
+
+  <div class="w3-display-right w3-padding w3-col l6 m8" style="opacity:0.8;">
+    <div class="w3-container  w3-red" >
+      <h2><i class="fa fa-cutlery w3-margin-right"></i> Hilton Table</h2>
+    </div>
+    <div class="w3-container w3-white w3-padding-16">
+      <form action="processroom.php" target="_blank">
+        <div class="w3-row-padding" style="margin:0 -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class="fa fa-calendar-o"></i> Check In</label>
+            <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY" name="CheckIn" required>
+          </div>
+          <div class="w3-half">
+            <label><i class="fa fa-calendar-o"></i> Timings</label>
+            <input class="w3-input w3-border" type="time" placeholder="time" name="CheckOut" required>
+          </div>
+        </div>
+        <div class="w3-row-padding" style="margin:8px -16px;">
+          <div class="w3-half w3-margin-bottom">
+            <label><i class="fa fa-male"></i> No Of Persons</label>
+            <input class="w3-input w3-border" type="number" value="1" name="Persons" min="1" max="15" required>
+          </div>
+          <div class="w3-half">
+            <label><i class="fa fa-cutlery"></i> Veg/Non-Veg</label>
+          <input class="w3-input w3-border" type="text" placeholder="Veg/Non-Veg" name="veg" required> 
+          </div>
+        </div>
+        <button class="w3-button w3-dark-grey" name="searchtable" type="submit" onclick='alert("Sorry!!\nLogin is mandatory to view the tables and availability")'><i class="fa fa-search w3-margin-right"></i> Search Availability</button>
+        
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1532px;">
+
+  <div class="w3-container w3-margin-top" id="rooms">
+    <h3>Rooms</h3>
+    <p>Make yourself at home is our slogan. We offer the best beds in the industry. Sleep well and rest well.</p>
+  </div>
+  
+  <div class="w3-row-padding">
+    <div class="w3-col m3">
+      <label><i class="fa fa-calendar-o"></i> Check In</label>
+      <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY">
+    </div>
+    <div class="w3-col m3">
+      <label><i class="fa fa-calendar-o"></i> Check Out</label>
+      <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-male"></i> Adults</label>
+      <input class="w3-input w3-border" type="number" placeholder="1">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-child"></i> Children</label>
+      <input class="w3-input w3-border" type="number" placeholder="0">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-search"></i> Search</label>
+      <button class="w3-button w3-block w3-black" onclick='alert("Sorry!!\nLogin is mandatory to view the rooms and availability")'> Search</button>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="singleroom.jpeg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3> Single Room</h3>
+        <h6 class="w3-opacity"> From Rs.4000</h6>
+        <p> Single bed</p>
+        <p> 15m<sup>2</sup></p>
+        <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("Relax in a comfortable, traditionally decorated Guest Room featuring a spacious desk with wireless internet access, an oversized easy-chair, a 40-inch LCD TV and a specially designed Mp3 alarm clock.\n\nRefresh in the elegant bathroom with a powerful rain shower or simply recline on your luxurious bed.")'> More About Room</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="doubleroom.jpeg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3> Double Room</h3>
+        <h6 class="w3-opacity"> From Rs.6000</h6>
+        <p> Queen-size bed</p>
+        <p> 25m<sup>2</sup></p>
+        <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("Indulge in our suites decorated in a fusion of traditional and contemporary styles, featuring stunning city views, a separate living room and working areas with international plug points.\n\nStay connected at the work desk with wireless internet access, refresh in the elegant bathroom with walk-in rain shower and enjoy access to the Executive Lounge with complimentary breakfast, drinks and canapés in the evening, as well as private check-in.\n\nRecline on the luxurious bed with jumbo hypo-allergenic pillows or relax in the oversized chair and browse through the channels on one of the two 40-inch LCD TVs.")'> More About Room</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="deluxeroom.jpeg" alt="Norway" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3> Deluxe Room</h3>
+        <h6 class="w3-opacity"> From Rs.8000</h6>
+        <p> King-size bed</p>
+        <p> 40m<sup>2</sup></p>
+        <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("High floor, complimentary WiFi, breakfast & drinks in lounge\n\nRooms are located in higher floors,delxe rooms offer views of tranquil garden cabanas and the city . Also provide Executive Lounge benefits featuring complimentary breakfast, drinks and canapes in the evening and free WiFi.\n\nCatch up on work at the desk with WiFi (fee applies) or relax on the easy chair while watching a movie on the 40-inch TV. Enjoy a drink from the mini-bar.Take a refreshing rain shower in the bathroom with a range of exclusive toiletries and enjoy a restful night sleep in the Hilton Serenity bed.\n\n Special touches include a daily newspaper, complimentary packaged drinking water, a bathrobe and slippers.")'>More About Room</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container w3-margin-top" id="table">
+    <h3>Table</h3>
+    <p>Taste the difference.Taste of home.Hasty and tasty.There are 6 different type of views available.</p>
+  </div>
+  
+  <div class="w3-row-padding">
+    <div class="w3-col m3">
+      <label><i class="fa fa-calendar-o"></i> Check In</label>
+      <input class="w3-input w3-border" type="text" placeholder="DD MM YYYY">
+    </div>
+    <div class="w3-col m3">
+      <label><i class="fa fa-calendar-o"></i> Timings</label>
+      <input class="w3-input w3-border" type="time" placeholder="Time">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-male"></i> Number of Persons</label>
+      <input class="w3-input w3-border" type="number" placeholder="1">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-cutlery"></i> Veg/Non-Veg</label>
+      <input class="w3-input w3-border" type="text" placeholder="veg/Non-veg">
+    </div>
+    <div class="w3-col m2">
+      <label><i class="fa fa-search"></i> Search</label>
+      <button class="w3-button w3-block w3-black" onclick='alert("Sorry!!\nLogin is mandatory to view the tables and availability")'> Search</button>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="pool.jpeg" alt="Pool" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3> Pool View</h3>
+        <h6 class="w3-opacity"> Duration : 2-3 hours</h6>
+        <p> 2/4/8 Member Table</p>
+        <p> Floor: Pool - F1</p>
+        <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("AMENITIES\n\n*Private heated swimming pool\n\n* Spa area\n\n* Fitness area\n\n* Private area on the beach with personal sunbeds & umbrella\n\n* Gervasoni outdoor lounge & dining area\n\* Barbeque\n\n* Bang & Olufsen Cordless Phone\n\n* Nespresso coffee center with complimentary Nespresso capsules")'> More About Table</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="theatre.jpeg" alt="theatre" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3> Theatre View</h3>
+        <h6 class="w3-opacity"> Duration : Full Movie</h6>
+        <p> 2/4/8/12 Member Table</p>
+        <p> Floor: Theatre - F2</p>
+        <p class="w3-large"><i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("AMENITIES\n\n* Movie \n\n* Nespresso coffee center with complimentary Nespresso capsules\n\n* Barbeque\n\n* Sony PlayStation 4\n\n* Bang & Olufsen Entertainment System\n\n* CD & DVD Players")'> More About Table</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="terrace.jpeg" alt="terrace" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3> Terrace View<h3>
+        <h6 class="w3-opacity"> Duration : Upto 2 Hours</h6>
+        <p> 2/4/8/12/15 Member Table</p>
+        <p> Floor: Terrace - F10</p>
+        <p class="w3-large"> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("AMENITIES\n\n* Barbeque\n\n* Nespresso coffee center with complimentary Nespresso capsules\n\n* Luxuriously stocked mini-bars\n\n* Children Activities including guided excursions to the local village, water park, mini golf\n\n* Special kids dining menu ")'> More About Table</button>
+      </div>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-padding-16">
+    <div class="w3-third w3-margin-bottom">
+      <img src="garden.jpeg" alt="garden" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3> Garden View</h3>
+        <h6 class="w3-opacity"> Duration : Upto 2 Hours</h6>
+        <p> 2/4/8/12/15 Member Table</p>
+        <p> Floor: Garden - BS1</p>
+        <p class="w3-large"><i class="fa fa-bath"></i> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i><i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("AMENITIES\n\n* Barbeque\n\n* Kids Club\n\nKids Entertainment Service\n\n* Baby Cots and Strollers* Kids Corner (outdoor playground)\n\n* Babysitting\n\n* Bang & Olufsen Cordless Phone\n\n* Nespresso coffee center with complimentary Nespresso capsules ")'> More About Table</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="candelight.jpeg" alt="candlelight" style="width:100%" >
+      <div class="w3-container w3-white">
+        <h3> Candle Light View</h3>
+        <h6 class="w3-opacity"> Duration : Upto 3 Hours</h6>
+        <p> 2/4 Member Table</p>
+        <p> Floor: Romantic - F9</p>
+        <p class="w3-large"><i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-tv"></i> </i><i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("AMENITIES\n\n*Bang & Olufsen Cordless Phone\n\n* Nespresso coffee center with complimentary Nespresso capsules\n\n* Welcome mock-tails for two.\n\n* A multi-cuisine 4 course veg/ non-veg meal consisting of 2 starters, 2 mains, 2 desserts, unlimited breads\n\n* A beautifully decorated table set up with flowers and candles\n\n* Private butler and ambient music")'> More About Table</button>
+      </div>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img src="spotlight.jpeg" alt="spotlight" style="width:100%">
+      <div class="w3-container w3-white">
+        <h3> Spotlight View</h3>
+        <h6 class="w3-opacity"> Duration : Upto 1.5 Hours</h6>
+        <p> 2/4/8/12/15 Member Table</p>
+        <p>  Floor: Spotlight - F8,F7,F6,F5,F4,F3</p>
+        <p class="w3-large"> <i class="fa fa-phone"></i> <i class="fa fa-wifi"></i> <i class="fa fa-glass"></i> <i class="fa fa-cutlery"></i></p>
+        <button class="w3-button w3-block w3-black w3-margin-bottom" name="chooseRoom" onclick='alert("AMENITIES\n\n* Barbeque\n\n* Bang & Olufsen Cordless Phone\n\n* Nespresso coffee center with complimentary Nespresso capsules\n\n* Air Conditioning\n\n* Personal working desk with iMac Desktop and complimentary Wi-Fi Internet")'> More About Table</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="w3-row-padding" id="about">
+    <div class="w3-col l4 12">
+      <h3>About</h3>
+      <h6>Our hotel is one of a kind. It is truely amazing. Hilton Chennai is a five-star luxury hotel located on Jawaharlal Nehru Road at Guindy, Chennai, India. It is located next to the Olympia Technology Park and close to the Kathipara Junction. Built in the Indo-Saracenic style with an initial investment of ₹ 4,000 million, it is Hilton's fourth Indian property after Hilton, Hilton Garden Inn (Saket), both in New Delhi, and Hilton Mumbai International Airport The 9-storied hotel is built on a 42-ground land and has 204 rooms, including 2 Executive Suites, 16 Junior Suites, 7 Hilton Deluxe Room, 58 Hilton Executive Rooms, 121 Hilton King Guest Rooms. The interiors were designed by Hong Kong's DiLeonardo and Dallas-based Wilson and Associates. There are 5 food and beverage offerings at the hotel namely, Ayna (pan-Indian restaurant), Vintage Bank (wine and cheese bar), Q Bar (a rooftop bar and grill), Vasco (an all-day dining global cuisine restaurant with live kitchens on the third floor) and Est (24 hour contemporary cafe and lounge).
+
+            The first floor has divisible 445 m2 ballroom, two meeting rooms and a boardroom with latest audio visual technology.The ballroom, named the Hilton Grand Ballroom, with a ceiling height of 5.9 m can hold 750 people.[8][9]
+
+            The rooftop features an outdoor 15-foot by 80-foot (25 m) infinity swimming pool designed in such a way that guests can gaze at the cityscape while swimming laps.
+
+            Along with all this, Hilton Chennai also showcases a 24-hour Fitness Center by Precor along with Executive Lounge located at fourth floor.</h6>
+    <p>We Accept: <i class="fa fa-credit-card w3-large"></i> <i class="fa fa-cc-mastercard w3-large"></i> <i class="fa fa-cc-amex w3-large"></i> <i class="fa fa-cc-cc-visa w3-large"></i><i class="fa fa-cc-paypal w3-large"></i></p>
+    </div>
+    <div class="w3-col l8 12">
+      <!-- Image of location/map -->
+      <img src="hiltonn.jpeg" class="w3-image w3-greyscale" style="width:100%;">
+    </div>
+  </div>
+  
+  <div class="w3-row-padding w3-large w3-center" style="margin:32px 0" id="address">
+    <div class="w3-third"><i class="fa fa-map-marker w3-text-red"></i> Address: 13,Jawaharlal Nehru Road at Guindy, Chennai 24, India</div>
+    <div class="w3-third"><i class="fa fa-phone w3-text-red"></i> Phone: 044 7854126</div>
+    <div class="w3-third"><i class="fa fa-envelope w3-text-red"></i> Email: hilton@gmail.com</div>
+  </div>
+
+  <div class="w3-panel w3-red w3-leftbar w3-padding-32">
+    <h6><i class="fa fa-info w3-deep-orange w3-padding w3-margin-right"></i> On demand, we can offer playstation, babycall, children care, dog equipment, etc.</h6>
+  </div>
+
+  <div class="w3-container" id="ourhotels">
+    <h3>Our Hotels</h3>
+    <h6>You can find our hotels anywhere in the world:</h6>
+  </div>
+  
+  <div class="w3-row-padding w3-padding-16 w3-text-white w3-large">
+    <div class="w3-half w3-margin-bottom">
+      <div class="w3-display-container">
+        <img src="duesseldorf.jpeg" alt="Duesseldorf" style="width:100%">
+        <span class="w3-display-bottomleft w3-padding">Duesseldorf</span>
+      </div>
+    </div>
+    <div class="w3-half">
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="gardeninn.jpeg" alt="garden Inn" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">garden Inn</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="istanbul.jpeg" alt="Istanbul" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Istanbul</span>
+          </div>
+        </div>
+      </div>
+      <div class="w3-row-padding" style="margin:0 -16px">
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="Kuala.jpeg" alt="Kuala Lumpur" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Kuala Lumpur</span>
+          </div>
+        </div>
+        <div class="w3-half w3-margin-bottom">
+          <div class="w3-display-container">
+            <img src="Kuwaitt.jpeg" alt="Kuwait" style="width:100%">
+            <span class="w3-display-bottomleft w3-padding">Kuwait</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container w3-padding-32 w3-black w3-opacity w3-card w3-hover-opacity-off" style="margin:32px 0;" id="subscribe">
+    <h2>Get the best offers first!</h2>
+    <p>Join our newsletter.</p>
+    <form action="process1.php" method="post">
+      <label>E-mail</label>
+      <input class="w3-input w3-border" type="email" name="email" placeholder="Your Email address" required>
+      <input type="submit" value="Subscribe" class="w3-button w3-red w3-margin-top" name="subscribe">
+    </form>
+  </div>
+
+  <div class="w3-container" id="contact">
+    <h2>Contact</h2>
+    <p>If you have any questions, do not hesitate to ask them.</p>
+    <i class="fa fa-map-marker w3-text-red" style="width:30px"></i> Guindy, Chennai 24, India<br>
+    <i class="fa fa-phone w3-text-red" style="width:30px"></i> Phone: 044 7854126<br>
+    <i class="fa fa-envelope w3-text-red" style="width:30px"> </i> Email: hilton@gmail.com<br>
+    <form action="sendmessage.php" target="_blank" method="post">
+      <p><input class="w3-input w3-padding-16 w3-border" name="name" type="name" placeholder="Name"  name="Name" required></p>
+      <p><input class="w3-input w3-padding-16 w3-border" name="emaill" type="email" placeholder="Email"  name="Email" required></p>
+      <p><input class="w3-input w3-padding-16 w3-border" name="message" type="text" placeholder="Message" name="Message" required></p>
+      <p><input type="submit" value="SEND MESSAGE" class="w3-button w3-black w3-padding-large" name="send" type="submit" ></p>
+    </form>
+  </div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-padding-32 w3-black w3-center w3-margin-top" id="Finduson">
+  <h5>Find Us On</h5>
+  <div class="w3-xlarge w3-padding-16">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+</footer>
+
+<!-- Add Google Maps -->
+<script>
+function myMap() {
+  myCenter=new google.maps.LatLng(41.878114, -87.629798);
+  var mapOptions= {
+    center:myCenter,
+    zoom:12, scrollwheel: false, draggable: false,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
+
+  var marker = new google.maps.Marker({
+    position: myCenter,
+  });
+  marker.setMap(map);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<!--
+To use this code on your website, get a free API key from Google.
+Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+-->
+
+</body>
+</html>

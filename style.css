@@ -1,0 +1,109 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: url(hiltonn.jpeg) no-repeat;
+    background-size: cover;
+    padding-top: 60px;
+}
+
+
+.signup
+{
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(101, 102, 114, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    overflow: hidden;
+    border-radius: 05px;
+
+}
+
+.signup img{
+    width: 50%;
+    height: 50%;
+
+}
+
+.signup input
+{
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    height: 44px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    font-family: sans-serif;
+    font-size: 14px;
+
+}
+
+.txt{
+    margin: 20px 0px;
+    border-radius: 0.5px;
+}
+
+.btn{
+    margin-top: 60px;
+    margin-bottom: 20px;
+    background: #487eb0;
+    color: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.btn:hover
+{
+    transform: scale(0.96);
+}
+
+.signup a{
+    text-decoration: none;
+    color: #000;
+    font-family: sans-serif;
+    padding: 10px;
+    transition: 0.8s;
+    display: block;
+}
+
+.signup a:hover{
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.login-container button {
+    float: right;
+    background-color: orangered;
+    font-size: large;
+    color: #fff;
+    margin-right: 10px;
+    padding: 13px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.login-container button:hover
+{
+    transform: scale(0.96);
+}
+
+.login-container {
+    float: right;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #aaa;
+    margin: 20px 0;
+    padding: 10px;
+    width: 100%;
+    min-height: 200px;
+    border: 2px #ccc solid;
+    color: #fff;
+}
